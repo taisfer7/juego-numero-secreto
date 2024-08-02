@@ -4,9 +4,6 @@ let intentos = 0;
 let listaNumerosSorteados = [];
 let numeroMaximo = 10;
 
-//para saber cual es el número secreto
-// console.log(numeroSecreto)
-
 function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML = texto;
@@ -17,10 +14,6 @@ function asignarTextoElemento(elemento, texto) {
 function verificarIntento() {
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
     
-    //para verificar el número de intentos
-    // console.log(intentos)
-
-    // === ---> significa que tienen que ser igual en valor y en tipo de dato
     if (numeroDeUsuario === numeroSecreto) {
         asignarTextoElemento('p', `Acertaste el número en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'}`);
         document.getElementById('reiniciar').removeAttribute('disabled');
@@ -78,13 +71,10 @@ function condicionesIniciales() {
 }
 
 function reiniciarJuego() {
-    // Limpiar la caja
     limpiarCaja();
-    // Indicar mensaje de intervalo de números
-    // Generar el número aleatorio
-    // Inicializar el número de intentos
+
     condicionesIniciales();
-    // Deshabilitar el botón de nuevo juego
+
     document.querySelector('#reiniciar').setAttribute('disabled', 'true');
 
 }
